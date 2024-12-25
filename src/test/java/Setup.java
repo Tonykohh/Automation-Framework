@@ -1,3 +1,4 @@
+import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -16,15 +17,15 @@ public class Setup {
       caps.setCapability("platformName", "android");
       caps.setCapability("automationName", "UIAutomator2");
       caps.setCapability("deviceName","TECNO-KJ5");
-      caps.setCapability("appPackage", "com.gluak.f24");
-      caps.setCapability("appActivity", "com.gluak.f24.GluakLibs.ui.container.AppMenu");
-      caps.setCapability("noReset", true);
+      caps.setCapability("appPackage", "io.appium.android.apis");
+      caps.setCapability("appActivity", "io.appium.android.apis.ApiDemos");
+      caps.setCapability("noReset", false);
    }
 
    public static void mainSetup () throws MalformedURLException {
       capabilities();
        try {
-           driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), caps);
+           driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub/"), caps);
            System.out.println("Session started successfully!");
        } catch (Exception e) {
            e.printStackTrace();
@@ -32,8 +33,21 @@ public class Setup {
 
    }
 
+   public static void ScrollToText (String text){
+
+   }
+
+   public static void performActions (){
+       driver.findElement(AppiumBy.accessibilityId("Access'ibility")).click();
+       driver.findElement(AppiumBy.accessibilityId("Custom View")).click();
+       driver.navigate().back();
+       driver.navigate().back();
+       driver.findElement(AppiumBy.accessibilityId("Views")).click();
+
+   }
    public static void main(String[] args) throws MalformedURLException {
        mainSetup();
+       performActions();
    }
 }
 
