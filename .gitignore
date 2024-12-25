@@ -35,5 +35,6 @@ build/
 .vscode/
 src/main/resources/archetype-resources
 src/main/resources/META-INF/maven
+C:\Users\Hp SpeCtre\IdeaProjects\MyAppiumFramework\.idea
 ### Mac OS ###
 .DS_Store
