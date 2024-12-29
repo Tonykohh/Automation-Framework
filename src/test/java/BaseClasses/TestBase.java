@@ -33,7 +33,7 @@ public class TestBase {
         capabilities();
         try {
             driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub/"), caps);
-            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(40));
+            //driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(40));
             System.out.println("Session started successfully!");
         } catch (Exception e) {
             e.printStackTrace();
@@ -41,6 +41,7 @@ public class TestBase {
 
     }
     public  void ScrollToText (String text){
+
 
 
     }

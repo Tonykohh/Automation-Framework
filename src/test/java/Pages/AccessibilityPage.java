@@ -2,7 +2,7 @@ package Pages;
 
 import BaseClasses.PageBase;
 import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.pagefactory.AndroidBy;
+import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.openqa.selenium.WebElement;
 
 public class AccessibilityPage extends PageBase {
@@ -11,7 +11,7 @@ public class AccessibilityPage extends PageBase {
         super(driver);
     }
 
-    @AndroidBy(accessibility = "Custom View")
+    @AndroidFindBy(accessibility = "Custom View")
     private WebElement customView;
 
 

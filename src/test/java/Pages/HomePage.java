@@ -2,7 +2,7 @@ package Pages;
 
 import BaseClasses.PageBase;
 import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.pagefactory.AndroidBy;
+import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.openqa.selenium.WebElement;
 
 public class HomePage extends PageBase {
@@ -11,8 +11,10 @@ public class HomePage extends PageBase {
         super(driver);
     }
 
-    @AndroidBy(accessibility = "Access'ibility")
+    @AndroidFindBy(accessibility = "Access'ibility")
    private WebElement accessibility;
+
+
 
 
     public WebElement getAccessibility() {
