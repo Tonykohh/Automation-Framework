@@ -14,8 +14,13 @@ public class HomePage extends PageBase {
     @AndroidFindBy(accessibility = "Access'ibility")
    private WebElement accessibility;
 
+    @AndroidFindBy(accessibility = "Views")
+    private WebElement Views;
 
 
+    public WebElement getViews() {
+        return Views;
+    }
 
     public WebElement getAccessibility() {
         return accessibility;
@@ -24,5 +29,8 @@ public class HomePage extends PageBase {
 
     public void clickAccessibility(){
         click(accessibility);
+    }
+    public void clickViews (){
+        click(Views);
     }
 }

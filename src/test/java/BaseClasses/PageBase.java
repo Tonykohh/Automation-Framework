@@ -19,12 +19,20 @@ public class PageBase {
         this.driver=driver;
     }
 
+    public void waitForElement (WebElement element, Integer seconds){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(seconds));
+        wait.until(ExpectedConditions.visibilityOf(element));
+    }
 
 
     public void click(WebElement element){
-       WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-        wait.until(ExpectedConditions.visibilityOf(element));
+       waitForElement(element, 20);
         element.click();
+    }
+
+    public void enterText (WebElement element, String text){
+        waitForElement(element, 20);
+        element.sendKeys(text);
     }
 
 
